@@ -19,8 +19,8 @@ def test_read_html_deve_retornar_ok_e_ola_mundo_em_html(client):
     assert response.status_code == HTTPStatus.OK  # Assert (Assert)
 
     assert (
-            response.text
-            == """
+        response.text
+        == """
     <html>
       <head>
         <title> Nosso olá mundo!</title>
@@ -72,7 +72,7 @@ def test_read_user_by_id(client):
         'id': 1,
     }
 
-    response_error = client.get("/users/2")
+    response_error = client.get('/users/2')
     assert response_error.status_code == HTTPStatus.NOT_FOUND
     assert response_error.json() == {'detail': 'User not found'}
 
